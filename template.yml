@@ -44,3 +44,17 @@ Resources:
       Policies:
         # Give Lambda basic execution Permission to the helloFromLambda
         - AWSLambdaBasicExecutionRole
+  # This is a Lambda function config associated with the source code: hello-from-lambda.js
+  getRootCategoriesFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: src/handlers/get-root-categories.getRootCategoriesHandler
+      Runtime: nodejs10.x
+      MemorySize: 128
+      Timeout: 60
+      Description: A Lambda function that returns tree of root categories
+      Policies:
+        # Give Lambda basic execution Permission to the helloFromLambda
+        - AWSLambdaBasicExecutionRole
+
